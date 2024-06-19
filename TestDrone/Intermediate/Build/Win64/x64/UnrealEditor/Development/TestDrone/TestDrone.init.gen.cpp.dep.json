@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\intermediate\\build\\win64\\unrealeditor\\inc\\testdrone\\uht\\testdrone.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\intermediate\\build\\win64\\x64\\testdroneeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\testdrone\\definitions.testdrone.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

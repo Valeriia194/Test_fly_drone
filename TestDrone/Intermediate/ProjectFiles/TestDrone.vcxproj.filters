@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\TestDrone.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\TestDrone.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\TestDroneEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\TestDrone">
+      <UniqueIdentifier>{56AD6109-8A07-3395-B13C-798874E68F70}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TestDrone\Drone.cpp">
+      <Filter>Source\TestDrone</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TestDrone\Drone.h">
+      <Filter>Source\TestDrone</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\TestDrone\TestDrone.Build.cs">
+      <Filter>Source\TestDrone</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\TestDrone\TestDrone.cpp">
+      <Filter>Source\TestDrone</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TestDrone\TestDrone.h">
+      <Filter>Source\TestDrone</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
