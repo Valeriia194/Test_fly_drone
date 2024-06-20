@@ -2,12 +2,19 @@
 
 
 #include "Drone.h"
+#include "Camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 
 // Sets default values
 ADrone::ADrone()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	//Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Player Camera"));
+	//Camera->SetupAttachment(RootComponent);
+	//Camera->bUsePawnControlRotation = true;
+
 
 }
 
@@ -27,15 +34,15 @@ void ADrone::ProcessKeyRoll(float Rate)
 	}
 }
 
-void ADrone::ProcessMouseXInput(float Value)
-{
-	ProcessPitch(Value);
-}
-
-void ADrone::ProcessMouseYInput(float Value)
-{
-	ProcessRoll(Value);
-}
+//void ADrone::ProcessMouseXInput(float Value)
+//{
+//	ProcessPitch(Value);
+//}
+//
+//void ADrone::ProcessMouseYInput(float Value)
+//{
+//	ProcessRoll(Value);
+//}
 
 void ADrone::ProcessRoll(float Value)
 {
@@ -104,10 +111,37 @@ void ADrone::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAxis("Turn", this, &ADrone::ProcessMouseXInput);
+	//PlayerInputComponent->BindAxis("Turn", this, &ADrone::ProcessMouseXInput);
+	//PlayerInputComponent->BindAxis("LookUp", this, &ADrone::ProcessMouseYInput);
+	
 	PlayerInputComponent->BindAxis("TurnRate", this, &ADrone::ProcessKeyRoll);
-	PlayerInputComponent->BindAxis("LookUp", this, &ADrone::ProcessMouseYInput);
 	PlayerInputComponent->BindAxis("LookUpRate", this, &ADrone::ProcessKeyPitch);
 
+	PlayerInputComponent->BindAxis("MoveForward", this, &ADrone::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &ADrone::MoveRight);
+	PlayerInputComponent->BindAxis("TurnCamera", this, &ADrone::Turn);
+	PlayerInputComponent->BindAxis("LookUp", this, &ADrone::LookUp);
+}
+
+void ADrone::MoveForward(float InputValue)
+{
+	FVector ForwardDirection = GetActorForwardVector();
+	AddMovementInput(ForwardDirection, InputValue);
+}
+
+void ADrone::MoveRight(float InputValue)
+{
+	FVector RightDirection = GetActorRightVector();
+	AddMovementInput(RightDirection, InputValue);
+}
+
+void ADrone::Turn(float InputValue)
+{
+	AddControllerYawInput(InputValue);
+}
+
+void ADrone::LookUp(float InputValue)
+{
+	AddControllerPitchInput(InputValue);
 }
 

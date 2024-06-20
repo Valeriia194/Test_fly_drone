@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TestDroneModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9cb8ed296f2e87b6d08ef449dba077bc43970957")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bb3f288467f2380ded2742f6c00299545e2461d")]
 [assembly: System.Reflection.AssemblyProductAttribute("TestDroneModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TestDroneModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

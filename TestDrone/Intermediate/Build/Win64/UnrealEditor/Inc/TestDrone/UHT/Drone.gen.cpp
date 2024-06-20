@@ -10,6 +10,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeDrone() {}
 // Cross Module References
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
+	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	TESTDRONE_API UClass* Z_Construct_UClass_ADrone();
 	TESTDRONE_API UClass* Z_Construct_UClass_ADrone_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_TestDrone();
@@ -52,6 +54,14 @@ void EmptyLinkFunctionForGeneratedCodeDrone() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_PitchRateMultiplier_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_PitchRateMultiplier;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Camera_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Camera;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SpringArmComp_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SpringArmComp;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -110,6 +120,22 @@ void EmptyLinkFunctionForGeneratedCodeDrone() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ADrone_Statics::NewProp_PitchRateMultiplier = { "PitchRateMultiplier", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADrone, PitchRateMultiplier), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ADrone_Statics::NewProp_PitchRateMultiplier_MetaData), Z_Construct_UClass_ADrone_Statics::NewProp_PitchRateMultiplier_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADrone_Statics::NewProp_Camera_MetaData[] = {
+		{ "Category", "Drone" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Drone.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADrone_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x0020080000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADrone, Camera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ADrone_Statics::NewProp_Camera_MetaData), Z_Construct_UClass_ADrone_Statics::NewProp_Camera_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADrone_Statics::NewProp_SpringArmComp_MetaData[] = {
+		{ "Category", "Drone" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Drone.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADrone_Statics::NewProp_SpringArmComp = { "SpringArmComp", nullptr, (EPropertyFlags)0x0020080000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADrone, SpringArmComp), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ADrone_Statics::NewProp_SpringArmComp_MetaData), Z_Construct_UClass_ADrone_Statics::NewProp_SpringArmComp_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADrone_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADrone_Statics::NewProp_Acceleration,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADrone_Statics::NewProp_MaxSpeed,
@@ -117,6 +143,8 @@ void EmptyLinkFunctionForGeneratedCodeDrone() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADrone_Statics::NewProp_CurrentForwardSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADrone_Statics::NewProp_RollRateMultiplier,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADrone_Statics::NewProp_PitchRateMultiplier,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADrone_Statics::NewProp_Camera,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADrone_Statics::NewProp_SpringArmComp,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ADrone_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ADrone>::IsAbstract,
@@ -156,9 +184,9 @@ void EmptyLinkFunctionForGeneratedCodeDrone() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TestTaskDrone_Test_fly_drone_TestDrone_Source_TestDrone_Drone_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ADrone, ADrone::StaticClass, TEXT("ADrone"), &Z_Registration_Info_UClass_ADrone, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADrone), 3899406041U) },
+		{ Z_Construct_UClass_ADrone, ADrone::StaticClass, TEXT("ADrone"), &Z_Registration_Info_UClass_ADrone, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADrone), 1861233736U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TestTaskDrone_Test_fly_drone_TestDrone_Source_TestDrone_Drone_h_210108636(TEXT("/Script/TestDrone"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TestTaskDrone_Test_fly_drone_TestDrone_Source_TestDrone_Drone_h_522978168(TEXT("/Script/TestDrone"),
 		Z_CompiledInDeferFile_FID_TestTaskDrone_Test_fly_drone_TestDrone_Source_TestDrone_Drone_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_TestTaskDrone_Test_fly_drone_TestDrone_Source_TestDrone_Drone_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

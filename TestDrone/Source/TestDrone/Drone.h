@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "Drone.generated.h"
 
+
 UCLASS()
 class TESTDRONE_API ADrone : public ACharacter
 {
@@ -23,7 +24,7 @@ public:
 	float MaxSpeed = 4800.f;
 
 	UPROPERTY(VisibleAnywhere, Category = "Flight")
-	float MinSpeed = 500.f;
+	float MinSpeed = 0.f;
 
 	UPROPERTY(EditAnywhere, Category = "Flight")
 	float CurrentForwardSpeed = 500.f;
@@ -47,8 +48,8 @@ protected:
 	void ProcessKeyPitch(float Rate);
 	void ProcessKeyRoll(float Rate);
 
-	void ProcessMouseXInput(float Value);
-	void ProcessMouseYInput(float Value);
+	//void ProcessMouseXInput(float Value);
+	//void ProcessMouseYInput(float Value);
 
 	// Calculate rotation
 	void ProcessRoll(float Value);
@@ -64,5 +65,20 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	// Arrows turn
+protected:	
+
+	UPROPERTY(EditAnywhere)
+	class UCameraComponent* Camera;
+
+	UPROPERTY(EditAnywhere)
+	class USpringArmComponent* SpringArmComp;
+
+	void MoveForward(float InputValue);
+	void MoveRight(float InputValue);
+
+	void Turn(float InputValue);
+	void LookUp(float InputValue);
 
 };
