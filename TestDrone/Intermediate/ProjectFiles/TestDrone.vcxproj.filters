@@ -36,6 +36,12 @@
     <ClInclude Include="..\..\Source\TestDrone\Drone.h">
       <Filter>Source\TestDrone</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\TestDrone\MyGameModeBase.cpp">
+      <Filter>Source\TestDrone</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TestDrone\MyGameModeBase.h">
+      <Filter>Source\TestDrone</Filter>
+    </ClInclude>
     <None Include="..\..\Source\TestDrone\TestDrone.Build.cs">
       <Filter>Source\TestDrone</Filter>
     </None>

@@ -39,13 +39,18 @@ void ADrone::ProcessMouseYInput(float Value)
 
 void ADrone::ProcessRoll(float Value)
 {
-	const float TargetRollSpeed = Value * RollRateMultiplier;
+	bIntentionalRoll = FMath::Abs(Value) > 0.f;
+	if (bIntentionalPitch && !bIntentionalRoll) return;
+
+	const float TargetRollSpeed = bIntentionalRoll ? (Value * RollRateMultiplier) : (GetActorRotation().Roll * -2.f);
 
 	CurrentRollSpeed = FMath::FInterpTo(CurrentRollSpeed, TargetRollSpeed, GetWorld()->GetDeltaSeconds(), 2.0f);
 }
 
 void ADrone::ProcessPitch(float Value)
 {
+	bIntentionalPitch = FMath::Abs(Value) > 0.f;
+
 	const float TargetPitchSpeed = Value * PitchRateMultiplier;
 	CurrentPitchSpeed = FMath::FInterpTo(CurrentPitchSpeed, TargetPitchSpeed, GetWorld()->GetDeltaSeconds(), 2.0f);
 }
@@ -61,6 +66,13 @@ void ADrone::BeginPlay()
 void ADrone::Tick(float DeltaTime)
 {
 
+	const float CurrentAcc = -GetActorRotation().Pitch * DeltaTime * Acceleration;
+	const float NewForwardSpeed = CurrentForwardSpeed * CurrentAcc;
+	CurrentForwardSpeed = FMath::Clamp(NewForwardSpeed, MinSpeed, MaxSpeed);
+
+	const FVector LocalMove = FVector(CurrentForwardSpeed * DeltaTime, 0.f, 0.f);
+	AddActorLocalOffset(LocalMove, true);
+
 	FRotator DeltaRotation(0, 0, 0);
 	DeltaRotation.Roll = CurrentRollSpeed * DeltaTime;
 	DeltaRotation.Yaw = CurrentYawSpeed * DeltaTime;
@@ -68,8 +80,23 @@ void ADrone::Tick(float DeltaTime)
 
 	AddActorLocalRotation(DeltaRotation);
 
+	GEngine->AddOnScreenDebugMessage(0, 0.f, FColor::Green, FString::Printf(TEXT("Forward Speed: %f"), CurrentForwardSpeed));
+
 	Super::Tick(DeltaTime);
 
+}
+
+void ADrone::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
+{
+	Super::NotifyHit(MyComp, Other, OtherComp, bSelfMoved, HitLocation, HitNormal, NormalImpulse, Hit);
+
+	// Deflect along surface
+
+	const FRotator CurrentRotation = GetActorRotation();
+	SetActorRotation(FQuat::Slerp(CurrentRotation.Quaternion(), HitNormal.ToOrientationQuat(), 0.025f));
+
+	// Slow
+	CurrentForwardSpeed = FMath::FInterpTo(CurrentForwardSpeed, MinSpeed, GetWorld()->GetDeltaSeconds(), 0.5f);
 }
 
 // Called to bind functionality to input
