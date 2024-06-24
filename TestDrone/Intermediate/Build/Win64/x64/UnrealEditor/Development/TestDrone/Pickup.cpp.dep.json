@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\source\\testdrone\\pickup.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\intermediate\\build\\win64\\x64\\testdroneeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\testdrone\\definitions.testdrone.h",
+            "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\source\\testdrone\\pickup.h",
+            "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\intermediate\\build\\win64\\unrealeditor\\inc\\testdrone\\uht\\pickup.generated.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\spherecomponent.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\spherecomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

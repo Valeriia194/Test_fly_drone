@@ -30,16 +30,52 @@
     <Filter Include="Source\TestDrone">
       <UniqueIdentifier>{56AD6109-8A07-3395-B13C-798874E68F70}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\TestDrone\DamageActor.cpp">
+      <Filter>Source\TestDrone</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TestDrone\DamageActor.h">
+      <Filter>Source\TestDrone</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\TestDrone\Drone.cpp">
       <Filter>Source\TestDrone</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\TestDrone\Drone.h">
       <Filter>Source\TestDrone</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\TestDrone\GameHUD.cpp">
+      <Filter>Source\TestDrone</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TestDrone\GameHUD.h">
+      <Filter>Source\TestDrone</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TestDrone\HealthComponent.cpp">
+      <Filter>Source\TestDrone</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TestDrone\HealthComponent.h">
+      <Filter>Source\TestDrone</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TestDrone\HealthPickup.cpp">
+      <Filter>Source\TestDrone</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TestDrone\HealthPickup.h">
+      <Filter>Source\TestDrone</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\TestDrone\MyGameModeBase.cpp">
       <Filter>Source\TestDrone</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\TestDrone\MyGameModeBase.h">
+      <Filter>Source\TestDrone</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TestDrone\Pickup.cpp">
+      <Filter>Source\TestDrone</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TestDrone\Pickup.h">
+      <Filter>Source\TestDrone</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TestDrone\PlayerHUDWidget.cpp">
+      <Filter>Source\TestDrone</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TestDrone\PlayerHUDWidget.h">
       <Filter>Source\TestDrone</Filter>
     </ClInclude>
     <None Include="..\..\Source\TestDrone\TestDrone.Build.cs">

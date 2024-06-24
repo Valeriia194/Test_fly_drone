@@ -1,0 +1,25 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\source\\testdrone\\damageactor.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\intermediate\\build\\win64\\x64\\testdroneeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\testdrone\\definitions.testdrone.h",
+            "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\source\\testdrone\\damageactor.h",
+            "d:\\programmimg\\ue\\testtaskdrone\\test_fly_drone\\testdrone\\intermediate\\build\\win64\\unrealeditor\\inc\\testdrone\\uht\\damageactor.generated.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystatics.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetsystemlibrary.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\assetregistry\\arfilter.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\kismetsystemlibrary.generated.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\sound\\dialoguetypes.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\dialoguetypes.generated.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystaticstypes.generated.h",
+            "d:\\programmimg\\ue\\5.3.2\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

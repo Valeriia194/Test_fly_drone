@@ -4,8 +4,15 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "HealthComponent.h"
 #include "Drone.generated.h"
 
+
+class UHealthComponent;
+class UTextRenderComponent;
+
+
+//DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealthChanged, float, NewHealth);
 
 UCLASS()
 class TESTDRONE_API ADrone : public ACharacter
@@ -14,6 +21,10 @@ class TESTDRONE_API ADrone : public ACharacter
 
 
 public:
+
+	//UPROPERTY(BlueprintAssignable)
+	//FOnHealthChanged OnHealthChanged;
+
 	// Sets default values for this character's properties
 	ADrone();
 
@@ -41,6 +52,7 @@ public:
 
 	bool bIntentionalPitch = false;
 	bool bIntentionalRoll = false;
+
 
 protected:
 	// Called when the game starts or when spawned
@@ -75,10 +87,19 @@ protected:
 	UPROPERTY(EditAnywhere)
 	class USpringArmComponent* SpringArmComp;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Components")
+	class UHealthComponent* HealthComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
+	UTextRenderComponent* HealthTextComponent;
+
 	void MoveForward(float InputValue);
 	void MoveRight(float InputValue);
 
 	void Turn(float InputValue);
 	void LookUp(float InputValue);
 
+	void OnDeath();
+	void OnHealthChanged(float Health);
+	
 };

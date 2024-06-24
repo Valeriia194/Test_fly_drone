@@ -4,6 +4,10 @@
 #include "Drone.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "HealthComponent.h"
+#include "Components/TextRenderComponent.h"
+#include "GameFramework/ProjectileMovementComponent.h"
+#include "GameFramework/Controller.h"
 
 // Sets default values
 ADrone::ADrone()
@@ -15,6 +19,11 @@ ADrone::ADrone()
 	//Camera->SetupAttachment(RootComponent);
 	//Camera->bUsePawnControlRotation = true;
 
+
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>("HealthComponent");
+
+	HealthTextComponent = CreateDefaultSubobject<UTextRenderComponent>("HealthTextComponent");
+	HealthTextComponent->SetupAttachment(GetRootComponent());
 
 }
 
@@ -67,11 +76,18 @@ void ADrone::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	check(HealthComponent);
+	check(HealthTextComponent);
+
+	OnHealthChanged(HealthComponent->GetHealth());
+	HealthComponent->OnDeath.AddUObject(this, &ADrone::OnDeath);
+	HealthComponent->OnHealthChanged.AddUObject(this, &ADrone::OnHealthChanged);
 }
 
 // Called every frame
 void ADrone::Tick(float DeltaTime)
 {
+	Super::Tick(DeltaTime);
 
 	const float CurrentAcc = -GetActorRotation().Pitch * DeltaTime * Acceleration;
 	const float NewForwardSpeed = CurrentForwardSpeed * CurrentAcc;
@@ -87,9 +103,10 @@ void ADrone::Tick(float DeltaTime)
 
 	AddActorLocalRotation(DeltaRotation);
 
-	GEngine->AddOnScreenDebugMessage(0, 0.f, FColor::Green, FString::Printf(TEXT("Forward Speed: %f"), CurrentForwardSpeed));
+	//GEngine->AddOnScreenDebugMessage(0, 0.f, FColor::Green, FString::Printf(TEXT("Forward Speed: %f"), CurrentForwardSpeed));
+	
 
-	Super::Tick(DeltaTime);
+
 
 }
 
@@ -121,6 +138,7 @@ void ADrone::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAxis("MoveRight", this, &ADrone::MoveRight);
 	PlayerInputComponent->BindAxis("TurnCamera", this, &ADrone::Turn);
 	PlayerInputComponent->BindAxis("LookUp", this, &ADrone::LookUp);
+
 }
 
 void ADrone::MoveForward(float InputValue)
@@ -145,3 +163,17 @@ void ADrone::LookUp(float InputValue)
 	AddControllerPitchInput(InputValue);
 }
 
+
+void ADrone::OnDeath() {
+	/*UE_LOG(Drone, Display, TEXT("Player % is dead"), *GetName());*/
+
+	SetLifeSpan(1.0f);
+	if (Controller) {
+		Controller->ChangeState(NAME_Spectating);
+	}
+}
+
+void ADrone::OnHealthChanged(float Health)
+{
+	HealthTextComponent->SetText(FText::FromString(FString::Printf(TEXT("%.0f"), Health)));
+}

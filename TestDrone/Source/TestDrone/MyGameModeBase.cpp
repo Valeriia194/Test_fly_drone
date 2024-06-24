@@ -2,4 +2,6 @@
 
 
 #include "MyGameModeBase.h"
+#include "Drone.h"
+#include "GameHUD.h"
 

@@ -8,7 +8,15 @@
 				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/StarterContent/Architecture/Floor_400x400.uasset",
 				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/Level/FirstLevel.umap",
 				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/BP_Drone.uasset",
-				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/BP_MyGameModeBase.uasset"
+				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/BP_MyGameModeBase.uasset",
+				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/PickUp/B_HealthPickup.uasset",
+				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/PickUp/Health.uasset",
+				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/UI/B_PlayerHUD.uasset",
+				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/UI/B_GameHUD.uasset",
+				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/UI/W_HealthWidget.uasset",
+				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/UI/BP_HUD.uasset",
+				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/Components/HealthComponent.uasset",
+				"D:/Programmimg/UE/TestTaskDrone/Test_fly_drone/TestDrone/Content/UI/W_HealthBar.uasset"
 			]
 		}
 	]
